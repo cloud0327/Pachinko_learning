@@ -1,0 +1,56 @@
+.mypage {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mypage-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 4px;
+}
+
+.mypage-profile .avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info .name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.profile-info .lv {
+  font-size: 12px;
+  color: var(--text-sub);
+  margin: 2px 0 6px;
+}
+
+.profile-info .exp {
+  font-size: 11px;
+  color: var(--text-sub);
+  margin-top: 4px;
+}
+
+.mypage-banner {
+  padding: 12px 16px;
+}
+
+.mypage-reset {
+  align-self: center;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-dim);
+  text-decoration: underline;
+}

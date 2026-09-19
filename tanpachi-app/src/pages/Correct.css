@@ -1,0 +1,112 @@
+.correct {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 38%, #ffd27a 0%, #ff8c1a 14%, #c8102e 34%, #2a0810 62%, #07070b 100%);
+}
+
+.correct-burst {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  width: 260px;
+  height: 260px;
+  margin: -130px 0 0 -130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 210, 120, 0.5) 40%, transparent 70%);
+  animation: pop 0.6s ease both;
+  filter: blur(6px);
+}
+
+.correct-body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 22px 26px;
+  gap: 8px;
+}
+
+.correct-title {
+  margin: 0;
+  font-size: 84px;
+  line-height: 1;
+  background: linear-gradient(180deg, #fff3b0 0%, #ffb02e 45%, #e0331a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 4px 0 #5a0a12) drop-shadow(0 0 22px rgba(255, 170, 60, 0.9));
+}
+
+.correct-ball-wrap {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  display: grid;
+  place-items: center;
+  margin-top: 6px;
+}
+
+.correct-ball-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7), transparent 70%);
+  animation: pulse-glow 1.6s ease-in-out infinite;
+}
+
+.correct-ball {
+  width: 110px;
+  height: 110px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.correct-plus {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  line-height: 1;
+}
+
+.correct-plus .plus {
+  font-size: 84px;
+  font-weight: 900;
+  font-style: italic;
+  color: #ffe08a;
+  text-shadow:
+    0 4px 0 #7a1020,
+    0 0 26px rgba(255, 190, 60, 0.9);
+}
+
+.correct-plus .unit {
+  font-size: 46px;
+  color: #ffe08a;
+  text-shadow:
+    0 3px 0 #7a1020,
+    0 0 20px rgba(255, 190, 60, 0.9);
+}
+
+.correct-balance {
+  width: 100%;
+  margin-top: 22px;
+  padding: 12px 16px 14px;
+  text-align: center;
+  background: rgba(10, 8, 4, 0.85);
+}
+
+.correct-balance .label {
+  font-size: 12px;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.correct-next {
+  margin-top: 14px;
+}

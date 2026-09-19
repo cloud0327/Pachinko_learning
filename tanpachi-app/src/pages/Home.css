@@ -1,0 +1,206 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(214, 26, 43, 0.18), transparent 40%),
+    var(--bg);
+}
+
+.home-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 2px 0;
+}
+
+.home-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-user .avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: #333;
+}
+
+.home-user .name {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.home-user .lv-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 3px;
+}
+
+.home-user .lv {
+  font-size: 11px;
+  color: var(--text-sub);
+}
+
+.home-user .lv-bar {
+  width: 110px;
+  height: 6px;
+}
+
+.home-banner {
+  position: relative;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(245, 197, 66, 0.4);
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(255, 120, 40, 0.5), transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(214, 26, 43, 0.55), transparent 50%),
+    linear-gradient(180deg, #1a0a0a, #0a0508);
+}
+
+.home-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-radial-gradient(
+    circle at 50% 120%,
+    rgba(255, 200, 80, 0.08) 0 2px,
+    transparent 2px 14px
+  );
+}
+
+.banner-title {
+  position: relative;
+  margin: 0;
+  font-size: 26px;
+  color: #ffe08a;
+  text-shadow:
+    0 0 10px rgba(255, 140, 40, 0.9),
+    0 2px 0 #7a1020;
+}
+
+.banner-sub {
+  position: relative;
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: #fff;
+}
+
+.home-today {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+}
+
+.today-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 96px;
+}
+
+.today-label {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.today-value {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.today-value .flame {
+  color: #ff6b2b;
+  align-self: center;
+  filter: drop-shadow(0 0 6px rgba(255, 107, 43, 0.8));
+}
+
+.today-value b {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.today-value .unit {
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.today-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.goal-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.home-balls {
+  padding: 10px 16px 14px;
+}
+
+.balls-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.coin {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff2b3, #d9a020 60%, #7a5000);
+}
+
+.balls-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.balls-history {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a1408;
+  background: linear-gradient(180deg, var(--gold-2), var(--gold));
+  border-radius: 999px;
+  padding: 6px 14px;
+  box-shadow: 0 2px 6px rgba(245, 197, 66, 0.4);
+}
+
+.home-cta {
+  border-radius: 16px;
+  padding: 12px 18px;
+  align-items: stretch;
+}
+
+.cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: left;
+}
+
+.cta-row > span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

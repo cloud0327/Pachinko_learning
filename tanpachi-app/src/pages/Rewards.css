@@ -1,0 +1,105 @@
+.rewards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reward-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reward-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+}
+
+.reward-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  border: 1px solid var(--gold-dark);
+}
+
+.reward-icon.sakura {
+  background:
+    radial-gradient(circle at 30% 30%, #ffd7e0 0 8px, transparent 9px),
+    radial-gradient(circle at 70% 60%, #ff9db3 0 10px, transparent 11px),
+    radial-gradient(circle at 40% 75%, #ffc1cf 0 6px, transparent 7px),
+    linear-gradient(135deg, #7a1030, #1a0410);
+}
+
+.reward-icon.premium {
+  background:
+    radial-gradient(circle at 50% 50%, #fff6c8 0 6px, #ffb02e 12px, transparent 22px),
+    repeating-conic-gradient(from 0deg, rgba(255, 200, 80, 0.5) 0 8deg, transparent 8deg 24deg),
+    linear-gradient(135deg, #3a1a04, #14060a);
+}
+
+.reward-icon.title {
+  position: relative;
+  background: linear-gradient(135deg, #2a1a08, #12100a);
+  display: grid;
+  place-items: center;
+}
+
+.reward-icon.title::after {
+  content: "英語\Aマスター";
+  white-space: pre;
+  font-size: 9px;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 900;
+  color: var(--gold-2);
+  padding: 4px 6px;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+}
+
+.reward-icon.theme {
+  background:
+    radial-gradient(circle at 60% 30%, #fff 0 3px, transparent 4px),
+    radial-gradient(circle at 20% 60%, #ffd7e0 0 5px, transparent 6px),
+    linear-gradient(135deg, #0a1a4a, #1a0410);
+}
+
+.reward-icon.sound {
+  background:
+    radial-gradient(circle at 50% 50%, #d61a2b 0 14px, #5a0a14 15px 18px, transparent 19px),
+    linear-gradient(135deg, #2a1a08, #12100a);
+}
+
+.reward-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.reward-name {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.reward-cost {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.btn-small-red.owned {
+  background: #333;
+  box-shadow: none;
+  color: var(--text-sub);
+  cursor: default;
+}
+
+.btn-small-red.disabled {
+  opacity: 0.6;
+}

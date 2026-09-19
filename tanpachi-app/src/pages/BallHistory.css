@@ -1,0 +1,30 @@
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-item .reason {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.history-item .time {
+  display: block;
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.history-item .delta {
+  font-weight: 900;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+.history-item .delta.plus {
+  color: var(--green);
+}
+.history-item .delta.minus {
+  color: var(--red-2);
+}

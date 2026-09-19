@@ -1,0 +1,47 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  user-select: none;
+}
+
+.logo-main {
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  background: linear-gradient(180deg, #fff6c8 0%, #f7cd4c 40%, #d9931b 70%, #ffe6a0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 3px 0 #7a1020) drop-shadow(0 0 14px rgba(214, 26, 43, 0.8));
+}
+
+.logo-sub {
+  margin-top: 8px;
+  letter-spacing: 0.35em;
+  font-weight: 700;
+  color: var(--gold-2);
+  text-shadow: 0 0 8px rgba(245, 197, 66, 0.8);
+}
+
+.logo-lg .logo-main {
+  font-size: 68px;
+}
+.logo-lg .logo-sub {
+  font-size: 13px;
+}
+
+.logo-md .logo-main {
+  font-size: 40px;
+}
+.logo-md .logo-sub {
+  font-size: 10px;
+}
+
+.logo-sm .logo-main {
+  font-size: 22px;
+}
+.logo-sm .logo-sub {
+  font-size: 7px;
+  margin-top: 3px;
+}

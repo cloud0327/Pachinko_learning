@@ -1,0 +1,93 @@
+.welcome {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 28px 36px;
+  gap: 18px;
+  text-align: center;
+}
+
+.welcome-fuji {
+  width: 160px;
+  height: 90px;
+  background: linear-gradient(180deg, #ffe8ea 0 20%, #c8102e 20% 55%, #5a0a14 100%);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  opacity: 0.85;
+  margin-bottom: -40px;
+  filter: drop-shadow(0 0 20px rgba(214, 26, 43, 0.6));
+}
+
+.welcome-tagline {
+  font-size: 22px;
+  margin: 4px 0 0;
+  color: #fff;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.welcome-ball-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: grid;
+  place-items: center;
+}
+
+.welcome-ball-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 197, 66, 0.45), transparent 70%);
+  animation: pulse-glow 2.4s ease-in-out infinite;
+}
+
+.welcome-ball {
+  width: 120px;
+  height: 120px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.welcome-desc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.welcome-desc .gold-text {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.welcome-cta {
+  margin-top: 10px;
+  max-width: 260px;
+  font-size: 20px;
+  padding: 16px 20px;
+  overflow: hidden;
+}
+
+.welcome-cta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  animation: shine 2.8s ease-in-out infinite;
+}

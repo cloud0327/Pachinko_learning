@@ -1,0 +1,96 @@
+.fx {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fx-hall {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(214, 26, 43, 0.55), transparent 55%),
+    radial-gradient(ellipse at 50% 90%, rgba(245, 197, 66, 0.35), transparent 60%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 60, 90, 0.18) 0 6px,
+      transparent 6px 26px,
+      rgba(245, 197, 66, 0.14) 26px 30px,
+      transparent 30px 60px
+    ),
+    linear-gradient(180deg, #2a0810 0%, #0b0b10 55%, #1a0d08 100%);
+}
+
+.fx-hall::before,
+.fx-hall::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 42%;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05) 0 2px,
+    transparent 2px 22px
+  );
+  transform: perspective(300px) rotateY(55deg);
+  opacity: 0.6;
+}
+.fx-hall::before {
+  left: -8%;
+}
+.fx-hall::after {
+  right: -8%;
+  transform: perspective(300px) rotateY(-55deg);
+}
+
+.fx-rays {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 900px;
+  height: 900px;
+  margin: -450px 0 0 -450px;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(255, 220, 120, 0.22) 0deg 6deg,
+    transparent 6deg 15deg
+  );
+  mask: radial-gradient(circle, #000 0%, rgba(0, 0, 0, 0.6) 35%, transparent 60%);
+  animation: rays 40s linear infinite;
+}
+
+.fx-sparkle {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.6);
+  opacity: 0.6;
+  animation: twinkle 2.6s ease-in-out infinite;
+}
+.fx-sparkle.gold {
+  background: var(--gold-2);
+  box-shadow: 0 0 8px 2px rgba(245, 197, 66, 0.7);
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.2);
+  }
+}
+
+.fx-petal {
+  position: absolute;
+  top: -20px;
+  border-radius: 100% 0 100% 0;
+  background: linear-gradient(135deg, #ffd7e0, #ff9db3);
+  opacity: 0.9;
+  animation: petal-fall linear infinite;
+}

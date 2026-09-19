@@ -1,0 +1,66 @@
+.ball-counter {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.ball-counter .ball {
+  align-self: center;
+}
+
+.ball-counter .num {
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  color: var(--gold);
+  text-shadow: 0 0 10px rgba(245, 197, 66, 0.4);
+}
+
+.ball-counter .unit {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.ball-counter .delta {
+  font-size: 0.55em;
+  font-weight: 700;
+  margin-left: 2px;
+}
+.ball-counter .delta.plus {
+  color: var(--green);
+}
+.ball-counter .delta.minus {
+  color: var(--red-2);
+}
+
+.ball-counter-sm .ball {
+  width: 18px;
+  height: 18px;
+}
+.ball-counter-sm .num {
+  font-size: 16px;
+}
+.ball-counter-sm .unit {
+  font-size: 11px;
+}
+
+.ball-counter-md .ball {
+  width: 26px;
+  height: 26px;
+}
+.ball-counter-md .num {
+  font-size: 26px;
+}
+.ball-counter-md .unit {
+  font-size: 13px;
+}
+
+.ball-counter-lg .ball {
+  width: 40px;
+  height: 40px;
+}
+.ball-counter-lg .num {
+  font-size: 36px;
+}
+.ball-counter-lg .unit {
+  font-size: 16px;
+}
