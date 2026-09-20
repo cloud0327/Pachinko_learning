@@ -43,7 +43,7 @@ export type AppState = {
 };
 
 type Action =
-  | { type: "ANSWER"; wordId: string; correct: boolean; reward: number; penalty: number }
+  | { type: "ANSWER"; wordId: string; correct: boolean; reward: number }
   | { type: "SPIN"; cost: number; win: number; jackpot: boolean }
   | { type: "SPIN_QUIZ"; result: QuizSpinResult }
   | { type: "RECORD_SESSION"; sessionId: string; score: number; minutes: number }
@@ -143,15 +143,14 @@ function bumpStat(
 function reducer(state: AppState, action: Action): AppState {
   switch (action.type) {
     case "ANSWER": {
-      // 正解は報酬を加算、不正解はペナルティ分を減算（0未満にならないようクランプ）
-      const delta = action.correct ? action.reward : -action.penalty;
+      const delta = action.correct ? action.reward : 0;
       const status = state.wordStatus[action.wordId] ?? { learned: false, weak: false, starred: false };
       const nextExp = state.exp + (action.correct ? 10 : 2);
       const levelUp = nextExp >= state.expToNext;
       return {
         ...state,
-        balls: Math.max(0, state.balls + delta),
-        earnedToday: action.correct ? state.earnedToday + delta : state.earnedToday,
+        balls: state.balls + delta,
+        earnedToday: state.earnedToday + delta,
         correct: state.correct + (action.correct ? 1 : 0),
         answered: state.answered + 1,
         learnedCount: state.learnedCount + (action.correct && !status.learned ? 1 : 0),
@@ -165,18 +164,13 @@ function reducer(state: AppState, action: Action): AppState {
             weak: !action.correct,
           },
         },
-        history:
-          action.correct || delta < 0
-            ? [
-                {
-                  id: uid(),
-                  at: new Date().toISOString(),
-                  delta,
-                  reason: action.correct ? "英単語学習 正解" : "英単語学習 不正解",
-                },
-                ...state.history,
-              ].slice(0, 50)
-            : state.history,
+        wordStats: bumpStat(state.wordStats, action.wordId, action.correct),
+        history: action.correct
+          ? [
+              { id: uid(), at: new Date().toISOString(), delta, reason: "英単語学習 正解" },
+              ...state.history,
+            ].slice(0, 50)
+          : state.history,
       };
     }
     case "SPIN": {
@@ -297,7 +291,7 @@ function loadState(): AppState {
 
 type Ctx = {
   state: AppState;
-  answer: (wordId: string, correct: boolean, reward?: number, penalty?: number) => void;
+  answer: (wordId: string, correct: boolean, reward?: number) => void;
   spin: (cost: number, win: number, jackpot: boolean) => void;
   /** クイズ=抽選の1回転分をまとめて確定させる */
   spinQuiz: (result: QuizSpinResult) => void;
@@ -320,8 +314,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, [state]);
 
   const answer = useCallback(
-    (wordId: string, correct: boolean, reward = 10, penalty = 0) =>
-      dispatch({ type: "ANSWER", wordId, correct, reward, penalty }),
+    (wordId: string, correct: boolean, reward = 10) =>
+      dispatch({ type: "ANSWER", wordId, correct, reward }),
     [],
   );
   const spin = useCallback(
